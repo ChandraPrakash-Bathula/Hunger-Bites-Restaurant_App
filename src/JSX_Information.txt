@@ -1,0 +1,59 @@
+
+/* Website Layout
+  Header Component
+    - Logo
+    - Navbar List Items (Right Side)
+    - Cart
+  Body Component
+    - Search Bar
+    - Restaurant List
+      - Restaurant Card
+        - Image
+        - Name
+        - Cuisine
+        - Star Rating
+  Footer Component
+    - Links
+    - Copyrights
+  */
+
+
+
+
+
+Optional Chaining ?. If it is just from object then it is {FoodItem.Name} and also renders only name if it exists by checking here by using optional chaining {FoodItem[0].Name?.join(", ")}.
+
+React.Fragment is a component, which is exported by the react.<React.Fragment> is like an empty tag <>.
+It acts as a parent element which is invisible in the DOM. And we can't pass in attributes to the React Fragments. 
+
+
+//One way of writing styles in JSX.
+
+const stylingObj = {
+  backgroundColor: "powderblue",
+};
+//This is another way  :  <h1 style={{ color: "red" }}> Some Heading</h1>
+
+const container = () => {
+  return (
+    <div style={stylingObj}>
+      <h1 style={{ color: "red" }}>Some Heading</h1>
+    </div>
+  );
+};
+
+// import NewHeader from "./components/Header; and this can be added as a JSX tag below and it will work the same as Header Component. We can also import with different names while exported as UnderlyingDefaultSource.
+
+// import HeaderComponent from "./components/Header"; Default Import
+// import { Title } from "./components/Header"; Name import; We can use Header.js or Header while importing and both works same.
+
+//import { Title, HeaderComponent } from "./components/Header"; in the case of export constants for multiple items we can import like this.
+
+/* We can import multiple things by using  import * as Name from "filepath"; then we can use for object properties too like obj.name etc... 
+But while we are importing as * for multiple components we can use like this : 
+Take the header and title component and we can use them individually like the below
+import * as HeadBarComponents from "./components/Header"; 
+
+<HeadBarComponents.Header />
+<HeadBarComponents.Title />
+ */
