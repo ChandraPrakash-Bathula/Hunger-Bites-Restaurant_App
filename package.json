@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ChandraPrakash-Bathula/Food_Project.git"
+    "url": "git+https://github.com/ChandraPrakash-Bathula/Hunger-Bites-Restaurant_App.git"
   },
   "keywords": [
     "React",
@@ -18,15 +18,16 @@
   "author": "Chandra Prakash Bathula",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ChandraPrakash-Bathula/Food_Project/issues"
+    "url": "https://github.com/ChandraPrakash-Bathula/Hunger-Bites-Restaurant_App/issues"
   },
-  "homepage": "https://github.com/ChandraPrakash-Bathula/Food_Project#readme",
+  "homepage": "https://github.com/ChandraPrakash-Bathula/Hunger-Bites-Restaurant_App#readme",
   "devDependencies": {
     "@babel/core": "^7.24.0",
     "parcel": "^2.12.0",
     "process": "^0.11.10"
   },
   "dependencies": {
+    "babel": "^6.23.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
