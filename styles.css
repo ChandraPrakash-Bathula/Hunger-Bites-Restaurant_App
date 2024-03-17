@@ -1,3 +1,5 @@
+
+
 .header-component {
   display: flex;
   justify-content: space-between;
@@ -32,4 +34,23 @@
 .card-list{
     display: flex;
     flex-wrap: wrap;
+}
+.shimmer {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(to right, #f6f7f8 8%, #edeef1 18%, #f6f7f8 33%);
+  background-size: 800px 104px;
+  position: absolute; /* Position shimmer absolutely within card */
+  top: 0; /* Position shimmer at top of card */
+  left: -100%; /* Start shimmer animation off-screen to the left */
+  animation: shimmer 1.5s infinite linear; /* Apply shimmer animation */
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%); /* Move shimmer off-screen to the left */
+  }
+  100% {
+    transform: translateX(100%); /* Move shimmer off-screen to the right */
+  }
 }
