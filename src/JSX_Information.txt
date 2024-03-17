@@ -1,5 +1,4 @@
-
-/* Website Layout
+Website Layout
   Header Component
     - Logo
     - Navbar List Items (Right Side)
@@ -15,11 +14,6 @@
   Footer Component
     - Links
     - Copyrights
-  */
-
-
-
-
 
 Optional Chaining ?. If it is just from object then it is {FoodItem.Name} and also renders only name if it exists by checking here by using optional chaining {FoodItem[0].Name?.join(", ")}.
 
