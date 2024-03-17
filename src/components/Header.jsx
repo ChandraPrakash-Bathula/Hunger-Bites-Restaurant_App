@@ -1,12 +1,12 @@
 import { useState } from "react";
-
+import Logo from "../assets/img/hunger.png"
 const Title = () => {
   return (
     // <h1 id="title" key="h1"> Indus Feast</h1>
     <a href="/">
       <img
         className="logo"
-        src="https://t4.ftcdn.net/jpg/02/75/70/03/360_F_275700347_09reCCwb7JBxTKiYQXsyri4riMKaHbj8.jpg"
+        src={Logo}
         alt="restaurant-logo"
       />
     </a>
