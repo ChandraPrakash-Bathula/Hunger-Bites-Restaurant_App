@@ -1,19 +1,19 @@
 Website Layout
   Header Component
-    - Logo
-    - Navbar List Items (Right Side)
-    - Cart
+    -> Logo
+    -> Navbar List Items (Right Side)
+    -> Cart
   Body Component
-    - Search Bar
-    - Restaurant List
-      - Restaurant Card
-        - Image
-        - Name
-        - Cuisine
-        - Star Rating
+    -> Search Bar
+    -> Restaurant List
+      -> Restaurant Card
+        -> Image
+        -> Name
+        -> Cuisine
+        -> Star Rating
   Footer Component
-    - Links
-    - Copyrights
+    -> Links
+    -> Copyrights
 
 Optional Chaining ?. If it is just from object then it is {FoodItem.Name} and also renders only name if it exists by checking here by using optional chaining {FoodItem[0].Name?.join(", ")}.
 
