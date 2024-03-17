@@ -1,8 +1,5 @@
 import { useState } from "react";
 
-const authentication = () => {
-  return true;
-};
 const Title = () => {
   return (
     // <h1 id="title" key="h1"> Indus Feast</h1>
