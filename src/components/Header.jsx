@@ -1,14 +1,12 @@
 import { useState } from "react";
-import Logo from "../assets/img/hunger.png"
+import Logo from "../assets/img/hunger.png";
+import { Link } from "react-router-dom";
+
 const Title = () => {
   return (
     // <h1 id="title" key="h1"> Indus Feast</h1>
     <a href="/">
-      <img
-        className="logo"
-        src={Logo}
-        alt="restaurant-logo"
-      />
+      <img className="logo" src={Logo} alt="restaurant-logo" />
     </a>
   );
 };
@@ -22,9 +20,15 @@ const HeaderComponent = () => {
         <Title />
         <div className="nav-bar-items">
           <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact</Link>
+            </li>
             <li>Cart</li>
           </ul>
         </div>
@@ -37,9 +41,13 @@ const HeaderComponent = () => {
             LogOut
           </button>
         ) : (
-          <button onClick={() => {
-            setIsLoggedIn(true);
-          }}>LogIn</button>
+          <button
+            onClick={() => {
+              setIsLoggedIn(true);
+            }}
+          >
+            LogIn
+          </button>
         )}
       </div>
     </main>
@@ -49,5 +57,4 @@ const HeaderComponent = () => {
 export default HeaderComponent;
 
 /* In {} in jsx only Allowed only JS Expressions and statements*/
-/* In the case of individual imports and export we need to use the keyword export infront of the const variable and also while importing we need to write in {} like 
-  import {Title} from "Header"; */
+/* In the case of individual imports and export we need to use the keyword export infront of the const variable and also while importing we need to write in {} like import {Title} from "Header"; */
