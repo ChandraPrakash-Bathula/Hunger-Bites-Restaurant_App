@@ -1,4 +1,4 @@
-# Hunger Bites 🍔 - Online Food Ordering Platform
+# 🍔 Hunger Bites  - Online Food Ordering Platform
 
 Feast your eyes on Hunger Bites, a cutting-edge online food ordering website crafted with React JS and tapping into the Swiggy public API for an extensive selection of restaurants. Hunger Bites prioritizes a frictionless and immersive food ordering journey, showcasing features like Shimmer UI for elegant loading, lazy loading for content optimization, and a responsive design for superior usability across different devices.
 
