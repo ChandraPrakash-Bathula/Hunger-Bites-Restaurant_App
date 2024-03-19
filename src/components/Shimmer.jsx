@@ -3,7 +3,7 @@ const Shimmer = () => {
     <>
       <div className="food-card">
         {Array(10)
-          .fill(" ")
+          .fill("")
           .map((e, index) => (
             <div key={index} className="shimmer"></div>
           ))}
