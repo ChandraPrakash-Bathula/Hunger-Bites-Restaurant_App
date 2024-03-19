@@ -2,10 +2,11 @@ import { restaurantList } from "./config";
 import Foodcard from "./FoodCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import {Link} from "react-router-dom";
 
-function filterData(searchText, restaurants) {
-  const filterData = foodItems.filter((restaurant) =>
-    restaurant?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase())
+function filterData(searchText, restaurant) {
+  const filterData = restaurant.filter((restaurants) =>
+    restaurants?.info?.name?.toLowerCase()?.includes(searchText.toLowerCase())
   );
   return filterData;
 }
@@ -76,7 +77,7 @@ if( !filteredRestaurants) return <h3>No Data Found</h3>
       </div>
       <div className="card-list">
         {filteredRestaurants.map((restaurant) => {
-          return <Foodcard {...restaurant.info} />;
+          return <Link to={"/restaurant/"+restaurant.info.id} key={...restaurant.info.id} ><Foodcard {...restaurant.info}  /></Link>;
         })}
       </div>
     </>
@@ -85,8 +86,7 @@ if( !filteredRestaurants) return <h3>No Data Found</h3>
 
 export default BodyComponent;
 
-/* 
-e.target.value is nothing but whatever we type in the input box.
+/* e.target.value is nothing but whatever we type in the input box.
 What is State? What is Hook? What is useState? 
 Hooks are just functions written by the developers at meta and gives us specific functionality. 
 This use state is used to create state variables. This functions returns an array and the first item in the array is the variable name.
