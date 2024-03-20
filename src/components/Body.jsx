@@ -77,7 +77,7 @@ if( !filteredRestaurants) return <h3>No Data Found</h3>
       </div>
       <div className="card-list">
         {filteredRestaurants.map((restaurant) => {
-          return <Link to={"/restaurant/"+restaurant.info.id} key={...restaurant.info.id} ><Foodcard {...restaurant.info}  /></Link>;
+          return <Link to={"/restaurant/"+restaurant.info.id} key={restaurant.info.id} ><Foodcard {...restaurant.info}  /></Link>;
         })}
       </div>
     </>
