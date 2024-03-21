@@ -3,7 +3,6 @@ import Profile from "./ProfileClass";
 import ProfileFunctionalComponent from "./Profile"
 
 
-
 const About = () => {
   return (
     <div>
