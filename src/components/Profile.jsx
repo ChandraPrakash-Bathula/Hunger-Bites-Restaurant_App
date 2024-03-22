@@ -1,8 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Profile = (props) => {
   const [count, setCount] = useState(0);
   const [count2, setCount2] = useState(1);
+
+  // useEffect(() => {
+  //   const time = setInterval(() => {
+  //     console.log("Time Bro.");
+  //   }, 1000);
+
+  //   return () => {
+  //     clearInterval(time);
+  //   };
+  // }, []);
 
   return (
     <>

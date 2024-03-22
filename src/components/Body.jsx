@@ -2,18 +2,13 @@ import { restaurantList } from "./config";
 import Foodcard from "./FoodCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
-import {Link} from "react-router-dom";
-
-function filterData(searchText, restaurant) {
-  const filterData = restaurant.filter((restaurants) =>
-    restaurants?.info?.name?.toLowerCase()?.includes(searchText.toLowerCase())
-  );
-  return filterData;
-}
+import { Link } from "react-router-dom";
+import { filterData } from "../utils/helper";
+import useOnline from "../utils/useOnline"
 
 const BodyComponent = () => {
   //searchText is a local state variable.
-  const [allRestaurants,setAllRestaurants] = useState([]);
+  const [allRestaurants, setAllRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
@@ -37,8 +32,12 @@ const BodyComponent = () => {
     );
     const json = await data.json();
     console.log(json);
-    setAllRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants); //optional chaining checks if it is present.
-    setFilteredRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants); //optional chaining checks if it is present.
+    setAllRestaurants(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    ); //optional chaining checks if it is present.
+    setFilteredRestaurants(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    ); //optional chaining checks if it is present.
   }
 
   /* conditional rendering : 
@@ -46,9 +45,15 @@ const BodyComponent = () => {
 
   /* This can even be written as const searchInput = useState();
   const [searchTxt,setSearchTxt] = searchInput */
-  
-if (!allRestaurants) return <h2>No Data Found</h2>;
-if( !filteredRestaurants) return <h3>No Data Found</h3>
+
+  const online = useOnline();
+
+  if(!online){
+    return <h1>🔴 No Internet Bro.</h1>
+  }
+
+  if (!allRestaurants) return <h2>No Data Found</h2>;
+  if (!filteredRestaurants) return <h3>No Data Found</h3>;
 
   return allRestaurants.length == 0 ? (
     <Shimmer />
@@ -77,7 +82,14 @@ if( !filteredRestaurants) return <h3>No Data Found</h3>
       </div>
       <div className="card-list">
         {filteredRestaurants.map((restaurant) => {
-          return <Link to={"/restaurant/"+restaurant.info.id} key={restaurant.info.id} ><Foodcard {...restaurant.info}  /></Link>;
+          return (
+            <Link
+              to={"/restaurant/" + restaurant.info.id}
+              key={restaurant.info.id}
+            >
+              <Foodcard {...restaurant.info} />
+            </Link>
+          );
         })}
       </div>
     </>
