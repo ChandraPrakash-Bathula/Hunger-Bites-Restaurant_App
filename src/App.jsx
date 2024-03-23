@@ -23,32 +23,6 @@ const WebsiteLayout = () => {
   );
 };
 
-/* <About />
-<BodyComponent />
-<Contact /> */
-
-// const appRoutes = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <WebsiteLayout />,
-//     errorElement: <Error />,
-//   },
-//   {
-//     path: "/about",
-//     element: <About />,
-//   },
-// ]);
-
-/*
-Chunking
-On Demand Loading
-Lazy Loading
-Code Splitting
-Dynamic Bundling
-Dynamic Imports
-
-When we are importing the component in demand react upon render tries to suspend the loading.
-*/
 
 const Instamart = lazy(() => import("./components/Instamart"));
 const About = lazy(() => import("./components/About")); //Never import lazy components inside another component
