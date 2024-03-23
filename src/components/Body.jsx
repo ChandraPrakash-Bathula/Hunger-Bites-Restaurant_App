@@ -12,17 +12,7 @@ const BodyComponent = () => {
   const [searchText, setSearchText] = useState("");
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
-  /* useEffect() has a call back function as it is not called directly, instead it will only called once useEffect is called. and it has a dependency array [] in it.
-  in the empty dependency we can have react state variable and this will only calls when they gets changed or called.
- 
-  syntax : useEffect(() => {any function in here},[any dependency array here]).
-
-  => empty dependency will only called only after initial render but not everytime.
-  => If it has an dependency array then it will render after initial render + whenever the function is called or changed.
-  */
-
-  /* So, it is a good practice to write API call in useEffect. It is also better to have a initial render, later an API call and a final display of the data. */
-  useEffect(() => {
+   useEffect(() => {
     getRestaurants();
   }, []);
 
@@ -40,11 +30,6 @@ const BodyComponent = () => {
     ); //optional chaining checks if it is present.
   }
 
-  /* conditional rendering : 
-  If restaurant data is empty then render shimmer UI else actual UI. */
-
-  /* This can even be written as const searchInput = useState();
-  const [searchTxt,setSearchTxt] = searchInput */
 
   const online = useOnline();
 
