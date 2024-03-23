@@ -84,10 +84,3 @@ const BodyComponent = () => {
 };
 
 export default BodyComponent;
-
-/* e.target.value is nothing but whatever we type in the input box.
-What is State? What is Hook? What is useState? 
-Hooks are just functions written by the developers at meta and gives us specific functionality. 
-This use state is used to create state variables. This functions returns an array and the first item in the array is the variable name.
-In React we create variables like this const [variable name] = useState();
-Ex : In JS const searchText = "KFC"; in JSX  const [searchText] = useState("Biryani"); */
