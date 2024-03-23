@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
-import useOnline from "../utils/useOnline"
+import useOnline from "../utils/useOnline";
 
 const BodyComponent = () => {
   //searchText is a local state variable.
@@ -48,8 +48,8 @@ const BodyComponent = () => {
 
   const online = useOnline();
 
-  if(!online){
-    return <h1>🔴 No Internet Bro.</h1>
+  if (!online) {
+    return <h1>🔴 No Internet Bro.</h1>;
   }
 
   if (!allRestaurants) return <h2>No Data Found</h2>;
@@ -59,28 +59,30 @@ const BodyComponent = () => {
     <Shimmer />
   ) : (
     <>
-      <div className="searchbar">
-        <input
-          type="text"
-          className="input-search"
-          placeholder="search"
-          value={searchText}
-          onChange={(e) => {
-            setSearchText(e.target.value);
-          }}
-        />
-        <button
-          className="searchBtn"
-          onClick={() => {
-            const data = filterData(searchText, allRestaurants);
-            setFilteredRestaurants(data);
-          }}
-        >
-          Search
-        </button>
+      <div className="p-2 my-2 flex justify-end">
+        <div className="">
+          <input
+            type="text"
+            className="p-2 rounded-md bg-white border border-slate-300 shadow-sm focus:outline-none focus:border-sky-500 "
+            placeholder="search"
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+          />
+          <button
+            className="p-2 m-2 bg-sky-600 text-white rounded-md hover:bg-sky-900"
+            onClick={() => {
+              const data = filterData(searchText, allRestaurants);
+              setFilteredRestaurants(data);
+            }}
+          >
+            Search
+          </button>
+        </div>
         <h2>{searchText ? "You are searching for : " + searchText : ""}</h2>
       </div>
-      <div className="card-list">
+      <div className="flex flex-wrap pl-6 ">
         {filteredRestaurants.map((restaurant) => {
           return (
             <Link
