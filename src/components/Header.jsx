@@ -7,7 +7,7 @@ const Title = () => {
   return (
     // <h1 id="title" key="h1"> Indus Feast</h1>
     <Link href="/">
-      <img className="logo" src={Logo} alt="restaurant-logo" />
+      <img className="h-28 pl-2" src={Logo} alt="restaurant-logo" />
     </Link>
   );
 };
@@ -17,28 +17,28 @@ const HeaderComponent = () => {
   const isOnline = useOnline();
   return (
     <main>
-      <div className="header-component">
+      <div className="flex justify-between shadow-lg bg-sky-300 sm:bg-sky-50 md:bg-sky-200">
         <Title />
         <div className="nav-bar-items">
-          <ul>
-            <li>
+          <ul className="flex py-10">
+            <li className="px-2">
               <Link to="/">Home</Link>
             </li>
-            <li>
+            <li className="px-2">
               <Link to="/about">About</Link>
             </li>
-            <li>
+            <li className="px-2">
               <Link to="/instamart">Instamart</Link>
             </li>
-            <li>
+            <li className="px-2">
               <Link to="/contact">Contact</Link>
             </li>
-            <li>Cart</li>
+            <li className="px-2">Cart</li>
           </ul>
         </div>
         <h1>{isOnline ? "✅" : "🔴"}</h1>
         {isLoggedIn ? (
-          <button
+          <button className="p-2"
             onClick={() => {
               setIsLoggedIn(false);
             }}
@@ -46,7 +46,7 @@ const HeaderComponent = () => {
             LogOut
           </button>
         ) : (
-          <button
+          <button className="p-2"
             onClick={() => {
               setIsLoggedIn(true);
             }}
