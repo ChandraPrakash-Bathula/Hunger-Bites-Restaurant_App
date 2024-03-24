@@ -11,6 +11,9 @@ import RestaurantDetails from "./components/RestaurantDetails";
 import Profile from "./components/Profile";
 import Shimmer from "./components/Shimmer";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+import Cart from "./components/Cart";
 
 const WebsiteLayout = () => {
   const [userName, setUserName] = useState();
@@ -25,14 +28,15 @@ const WebsiteLayout = () => {
   return (
     // <React.Fragment>
     <>
-      <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
-        <UserContext.Provider value={{ loggedInUser: "Chandu Naidu" }}>
+      <Provider store={appStore}>
+        <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
           <HeaderComponent />
+          <UserContext.Provider value={{ loggedInUser: "Chandu Naidu" }}>
+            <Outlet />
+          </UserContext.Provider>
         </UserContext.Provider>
-        <Outlet />
-
         <FooterComponent />
-      </UserContext.Provider>
+      </Provider>
     </>
     // </React.Fragment>
   );
@@ -79,6 +83,10 @@ const appRoutes = createBrowserRouter([
       {
         path: "/restaurant/:id",
         element: <RestaurantDetails />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
     errorElement: <Error />,
