@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Logo from "../assets/img/hunger-bites.jpg";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
+import UserContext from "../utils/UserContext";
 
 const Title = () => {
   return (
@@ -13,6 +14,14 @@ const Title = () => {
 };
 
 const HeaderComponent = () => {
+
+// const logData = useContext(UserContext);
+// console.log(logData);
+
+const {loggedInUser} = useContext(UserContext);
+
+
+
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const isOnline = useOnline();
   return (
@@ -21,6 +30,8 @@ const HeaderComponent = () => {
         <Title />
         <div className="nav-bar-items">
           <ul className="flex py-10">
+          <li className="px-2 font-bold">{loggedInUser}</li>
+            <li className="px-2"> OnlineStatus :{isOnline ? " ✅" : " 🔴"}</li>
             <li className="px-2">
               <Link to="/">Home</Link>
             </li>
@@ -34,11 +45,10 @@ const HeaderComponent = () => {
               <Link to="/contact">Contact</Link>
             </li>
             <li className="px-2">Cart</li>
-          </ul>
-        </div>
-        <h1>{isOnline ? "✅" : "🔴"}</h1>
-        {isLoggedIn ? (
-          <button className="p-2"
+         <li className="px-2">
+          {isLoggedIn ? (
+          <button
+            
             onClick={() => {
               setIsLoggedIn(false);
             }}
@@ -46,14 +56,18 @@ const HeaderComponent = () => {
             LogOut
           </button>
         ) : (
-          <button className="p-2"
+          <button
+            
             onClick={() => {
               setIsLoggedIn(true);
             }}
           >
             LogIn
           </button>
-        )}
+        )}</li>
+         </ul>
+        </div>
+      
       </div>
     </main>
   );

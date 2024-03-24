@@ -11,13 +11,7 @@ import { restaurantList, IMG_URL } from "./config";
 //   );
 // };
 
-const Foodcard = ({
-  name,
-  cuisines,
-  cloudinaryImageId,
-  areaName,
-  sla
-}) => {
+const Foodcard = ({ name, cuisines, cloudinaryImageId, areaName, sla }) => {
   return (
     <div className="w-52 h-82 p-3 m-3 rounded-md shadow-lg bg-sky-200">
       <img src={IMG_URL + cloudinaryImageId} />
@@ -28,6 +22,20 @@ const Foodcard = ({
     </div>
   );
 };
+
+export const PromotedFoodCard = (Foodcard) => {
+  return (props) => {
+    return (
+      <>
+        <div>
+          <label className="absolute text-white bg-black p-2 m-2 rounded-lg">Promoted</label>
+          <Foodcard {...props} />
+        </div>
+      </>
+    );
+  };
+};
+
 export default Foodcard;
 
 {

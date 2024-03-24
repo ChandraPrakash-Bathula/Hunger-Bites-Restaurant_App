@@ -1,4 +1,5 @@
 import React from "react";
+import UserContext from "../utils/UserContext";
 
 class Profile extends React.Component {
   constructor(props) {
@@ -48,6 +49,13 @@ class Profile extends React.Component {
     return (
       <>
         <h1>Profile Class Component.</h1>
+        <div>
+        LoggedInUser : 
+          <UserContext.Consumer>
+            {({loggedInUser}) => <h2 className="text-xl font-bold">{loggedInUser}</h2> } 
+            {/* {(data) => data.loggedInUser}; it comes as a callback function.  */}
+          </UserContext.Consumer>
+        </div>
         <h2>Name : {name}</h2>
         <h2>Location : {location}</h2>
         <img src={avatar_url} />
