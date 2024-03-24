@@ -104,3 +104,7 @@ Dynamic Imports
 
 When we are importing the component in demand react upon render tries to suspend the loading.
 */
+
+/*
+Redux is not mandatory for all projects. It is an optional for medium and small and should be only used when there is a heavy usage of the data and state.
+*/
