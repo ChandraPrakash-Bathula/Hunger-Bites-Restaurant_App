@@ -3,6 +3,7 @@ import Logo from "../assets/img/hunger-bites.jpg";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Title = () => {
   return (
@@ -14,13 +15,14 @@ const Title = () => {
 };
 
 const HeaderComponent = () => {
+  // const logData = useContext(UserContext);
+  // console.log(logData);
 
-// const logData = useContext(UserContext);
-// console.log(logData);
+  const { loggedInUser } = useContext(UserContext);
 
-const {loggedInUser} = useContext(UserContext);
-
-
+  const cartItems = useSelector((store) => 
+    store.cart.items
+  );
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const isOnline = useOnline();
@@ -30,7 +32,7 @@ const {loggedInUser} = useContext(UserContext);
         <Title />
         <div className="nav-bar-items">
           <ul className="flex py-10">
-          <li className="px-2 font-bold">{loggedInUser}</li>
+            <li className="px-2 font-bold">{loggedInUser}</li>
             <li className="px-2"> OnlineStatus :{isOnline ? " ✅" : " 🔴"}</li>
             <li className="px-2">
               <Link to="/">Home</Link>
@@ -44,30 +46,28 @@ const {loggedInUser} = useContext(UserContext);
             <li className="px-2">
               <Link to="/contact">Contact</Link>
             </li>
-            <li className="px-2">Cart</li>
-         <li className="px-2">
-          {isLoggedIn ? (
-          <button
-            
-            onClick={() => {
-              setIsLoggedIn(false);
-            }}
-          >
-            LogOut
-          </button>
-        ) : (
-          <button
-            
-            onClick={() => {
-              setIsLoggedIn(true);
-            }}
-          >
-            LogIn
-          </button>
-        )}</li>
-         </ul>
+            <li className="px-2 font-bold text-lg"> <Link to="/cart">Cart ({cartItems.length} item)</Link> </li>
+            <li className="px-2">
+              {isLoggedIn ? (
+                <button
+                  onClick={() => {
+                    setIsLoggedIn(false);
+                  }}
+                >
+                  LogOut
+                </button>
+              ) : (
+                <button
+                  onClick={() => {
+                    setIsLoggedIn(true);
+                  }}
+                >
+                  LogIn
+                </button>
+              )}
+            </li>
+          </ul>
         </div>
-      
       </div>
     </main>
   );
