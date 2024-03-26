@@ -74,7 +74,3 @@ const HeaderComponent = () => {
 };
 
 export default HeaderComponent;
-
-/* In {} in jsx only Allowed only JS Expressions and statements */
-/* In the case of individual imports and export we need to use the keyword 
-export infront of the const variable and also while importing we need to write in {} like import {Title} from "Header"; */
