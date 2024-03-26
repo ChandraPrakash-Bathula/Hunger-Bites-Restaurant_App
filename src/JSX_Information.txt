@@ -115,3 +115,12 @@ Redux is not mandatory for all projects. It is an optional for medium and small 
 export infront of the const variable and also while importing we need to write in {} like import {Title} from "Header"; */
 
  {/* <Outlet /> */} Takes care of the children elements in the routing.
+
+ /* Older version of redux : Don't Mutate the state and also returning was mandatory.
+const newState = [...state]
+newState.items.push(action.payload)
+return newState
+*/
+
+    /* In the Newer Version of Redux Toolkit : We have to mutate the state, and there is no mandatory of using return.
+    Redux Toolkit also uses immer which is a JS library in it for mutation kinda things. */
