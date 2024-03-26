@@ -6,8 +6,8 @@ const cartSlice = createSlice({
     items: [],
   },
   reducers: {
-
-/* Older version of redux : Don't Mutate the state and also returning was mandatory.
+    
+    /* Older version of redux : Don't Mutate the state and also returning was mandatory.
 const newState = [...state]
 newState.items.push(action.payload)
 return newState
