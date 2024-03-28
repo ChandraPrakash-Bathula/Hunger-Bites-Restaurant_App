@@ -124,3 +124,8 @@ return newState
 
     /* In the Newer Version of Redux Toolkit : We have to mutate the state, and there is no mandatory of using return.
     Redux Toolkit also uses immer which is a JS library in it for mutation kinda things. */
+
+There are three types of testing a developer can do in a react application.
+1. Unit Testing. : It is individual unit testing keeping the rest of the application in isolation.
+2. Integration Testing. : This is testing the integration of the components with respect to functionality associated among them.
+3. End to End Testing (e2e). : This is a complete testing of the application and by testing all the flows.
