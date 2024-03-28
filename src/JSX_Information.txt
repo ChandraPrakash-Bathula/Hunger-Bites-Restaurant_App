@@ -129,3 +129,4 @@ There are three types of testing a developer can do in a react application.
 1. Unit Testing. : It is individual unit testing keeping the rest of the application in isolation.
 2. Integration Testing. : This is testing the integration of the components with respect to functionality associated among them.
 3. End to End Testing (e2e). : This is a complete testing of the application and by testing all the flows.
+Test cases are written and stored in this folder  : __test__  and the convention of _ _ name _ _ is known as Dunder.
