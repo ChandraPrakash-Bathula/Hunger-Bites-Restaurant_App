@@ -20,18 +20,15 @@ Welcome to Hunger Bites, the avant-garde online food ordering haven 🏡 designe
 - **Bundling and Compiling:** Parcel and Babel 📦 - For seamless application bundling and ES6+ code compilation, optimizing performance and compatibility.
 - **Navigation and Routing:** React Router v6 🚦 - Implementing modern routing solutions for seamless navigation within the application.
 - **Styling:** Tailwind CSS 💅 - Adopting Tailwind for intuitive and responsive design, accelerating UI development.
-
-## Adding Custom Hooks and Redux Store Integration 🛠️
-
-To further enhance Hunger Bites, we're incorporating custom hooks and leveraging the Redux store for state management, ensuring a robust and dynamic user experience.
-
-### Custom Hooks:
-
-- **useConnectionStatus:** 📶 A custom hook that monitors and returns the user's internet connectivity status in real-time, enabling features or notifications that improve user interaction during offline periods.
-
-### Redux Store:
-
-- **Restaurants Slice:** 🍽️ Manages the state of restaurant listings, including fetching data from the Swiggy API, searching, and filtering operations.
-- **Cart Slice:** 🛍️ Handles the shopping cart's state, including adding items, removing items, and calculating totals, ensuring a smooth checkout process.
+- **Parcel:** Dev Build, Local Server, HMR (Hot Module Replacement), File Watching Algorithm, Caching, Image Optimization, Minification, Bundling, Compress, Consistent Hashing, Code Splitting, Differential Bundling, Diagnostic, Error Handling, HTTPs, Tree Shaking, Different dev and prod bundles.
+- **Hunger Bites Restaurant APP Components:** 
+  - **Header:** Logo, Nav Items
+  - **Body:** Search, RestaurantContainer, RestaurantCard (Img, Name of Res, Star Rating, cuisine, delivery time)
+  - **Footer:** Copyright, Links, Address, Contact
+- **React Hooks:** useState(), useEffect()
+- **Types of Routing in Web Apps:** Client Side Routing, Server Side Routing
+- **Redux Toolkit:** Store building, Connection to the app, Slices (cartSlice), Dispatching actions, Selectors
+- **Types of Testing (Developer):** Unit Testing, Integration Testing, End to End Testing - e2e testing
+- **Setting up Testing in our app:** Installation of React Testing Library, Jest, Babel dependencies, Configuration of Babel and Parcel Config file, Jest initialization, Installation of jsdom library, Installation of @babel/preset-react, npm i -D @testing-library/jest-dom
 
 Embark on a journey with Hunger Bites for a swift 🏃‍♂️💨, delightful 😋, and comprehensive online food ordering experience. Blending speed, functionality, and a diverse array of culinary options 🥗🍔🍣, Hunger Bites stands as your go-to platform for both quick bites and explorative dining adventures, catering to every palate and preference 🌍.
