@@ -6,7 +6,7 @@
     "start": "parcel index.html",
     "build": "parcel build index.html",
     "test": "jest",
-    "watch-test":"jest --watch"
+    "watch-test": "jest --watch"
   },
   "repository": {
     "type": "git",
