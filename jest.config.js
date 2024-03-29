@@ -193,6 +193,10 @@ const config = {
 
   // Whether to use watchman for file crawling
   // watchman: true,
+  transform: {
+    "^.+\\.(js|jsx|ts|tsx)$": "babel-jest",
+    "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga|ico|pdf|bmp|avi|mov|css|less|scss|html|json)$": "<rootDir>/fileTransformer.js"
+  }
 };
 
 module.exports = config;
