@@ -1,6 +1,9 @@
 import { restaurantList, IMG_URL } from "./config";
 
-const Foodcard = ({ name, cuisines, cloudinaryImageId, areaName, sla }) => {
+const Foodcard = (props) => {
+
+const {resData} = props;
+const { name, cuisines, cloudinaryImageId, areaName, sla } = resData
   return (
     <div className="w-52 h-82 p-3 m-3 rounded-md shadow-lg bg-sky-200">
       <img src={IMG_URL + cloudinaryImageId} />

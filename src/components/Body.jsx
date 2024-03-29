@@ -49,10 +49,11 @@ const BodyComponent = () => {
     <Shimmer />
   ) : (
     <>
-      <div className="p-2 my-2 flex justify-start">
+      <div data-testid="resCard" className="p-2 my-2 flex justify-start">
         <div className="">
           <input
             type="text"
+            data-testid = "searchInput"
             className="p-2 rounded-md bg-white border border-slate-300 shadow-sm focus:outline-none focus:border-sky-500 "
             placeholder="search"
             value={searchText}
@@ -87,10 +88,10 @@ const BodyComponent = () => {
               to={"/restaurant/" + restaurant.info.id}
               key={restaurant.info.id}
             >
-              {Object.keys(restaurant.info.cuisines).length < 5 ? (
-                <Foodcard {...restaurant.info} />
+              {Object.keys(restaurant?.info?.cuisines).length < 5 ? (
+                <Foodcard resData={restaurant?.info} />
               ) : (
-                <PromotedCard {...restaurant.info} />
+                <PromotedCard resData={restaurant?.info} />
               )}
               {/* <Foodcard {...restaurant.info} /> */}
             </Link>
