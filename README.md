@@ -1,4 +1,4 @@
-# 🍔 Hunger Bites - Ultimate Online Food Expedition 🌐 (React JS, API, Parcel, Babel) 
+# 🍔 Hunger Bites - Ultimate Online Food Expedition (React JS, API, Parcel, Babel) 🌐 
 
 Welcome to Hunger Bites, the avant-garde online food ordering haven 🏡 designed meticulously with React JS and enhanced by the extensive database of the Swiggy public API, ensuring a wide spectrum of restaurant selections 🍲. At Hunger Bites, we're dedicated to delivering a seamless, captivating food ordering experience 🌟, accentuated by cutting-edge features such as Shimmer UI for sophisticated loading aesthetics, lazy loading for streamlined content presentation, and a universally responsive design ensuring an unmatched usability across diverse devices 📱💻.
 
